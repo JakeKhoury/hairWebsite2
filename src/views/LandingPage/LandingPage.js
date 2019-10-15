@@ -53,7 +53,7 @@ export default function LandingPage(props) {
               <h1 className={classes.title}>Professional care for your hair.</h1>
               <h4>
                 Quality hair care services for men and women. Whether you
-                just need a touch up or want to reinvent your whole look, Dalton
+                just need a touch up or you want to reinvent your look, Dalton
                 will take care of you with professional styling.
               </h4>
               <br />

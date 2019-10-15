@@ -60,9 +60,10 @@ export default function Header(props) {
     [classes.absolute]: absolute,
     [classes.fixed]: fixed
   });
+  
   const brandComponent = (
     <div>
-      <img src={``} style={{width: 60, height: 'auto'}} />
+      <img src={logo} style={{width: 60, height: 'auto'}} />
       <Button className={classes.title}>{brand}</Button>
     </div>
   );
