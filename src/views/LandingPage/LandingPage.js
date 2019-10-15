@@ -28,6 +28,10 @@ const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
 
+const paraStyle = {
+  display: 'inline'
+};
+
 export default function LandingPage(props) {
   const classes = useStyles();
   const { ...rest } = props;
@@ -46,14 +50,14 @@ export default function LandingPage(props) {
         }}
         {...rest}
       />
-      <Parallax filter image={require("assets/img/landingBG.jpg")}>
+      <Parallax filter image={require("assets/img/woman-hair.jpg")}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
               <h1 className={classes.title}>Professional care for your hair.</h1>
-              <h4>
-                Quality hair care services for men and women. Whether you
-                just need a touch up or you want to reinvent your look, Dalton
+              <h4 style={paraStyle}>
+                Quality hair care services for <strong>women</strong> and <strong>men</strong>. Whether you
+                just need a touch up or you want to reinvent your whole look, Dalton
                 will take care of you with professional styling.
               </h4>
               <br />
@@ -74,8 +78,8 @@ export default function LandingPage(props) {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <ProductSection />
-          <TeamSection />
-          <WorkSection />
+          {/* <TeamSection /> */}
+          {/* <WorkSection /> */}
         </div>
       </div>
       <Footer />
