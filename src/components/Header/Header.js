@@ -62,7 +62,7 @@ export default function Header(props) {
   });
   const brandComponent = (
     <div>
-      <img src={logo} style={{width: 25, height: 'auto'}} />
+      <img src={logo} style={{width: 60, height: 'auto'}} />
       <Button className={classes.title}>{brand}</Button>
     </div>
   );
