@@ -33,8 +33,12 @@ const paraStyle = {
 };
 
 const titleStyle = {
-  justifyContent: 'center', 
-  alignItems: 'center' 
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  alignContent: 'center',
+  containter: 'true'
 }
 
 export default function LandingPage(props) {
@@ -57,14 +61,13 @@ export default function LandingPage(props) {
       />
       <Parallax filter image={require("assets/img/woman-hair.jpg")}>
         <div className={classes.container}>
-          <GridContainer>
+          <GridContainer name="titleText" /*style={titleStyle}*/>
             <GridItem xs={12} sm={12} md={6}>
-              <h1 style={titleStyle} className={classes.title}>Services offered</h1>
-              {/* <h4 style={paraStyle}>
-                Quality hair care services for <strong>women</strong> and <strong>men</strong>. Whether you
-                just need a touch up or you want to reinvent your whole look, Dalton
-                will take care of you with professional styling.
-              </h4> */}
+              <h1 className={classes.title}>Services offered</h1>
+              <br></br>
+              <h4 style={paraStyle}>
+                Here{"'"}s what we can do for you.
+              </h4>
               {/* <br />
               <Button
                 color="danger"
