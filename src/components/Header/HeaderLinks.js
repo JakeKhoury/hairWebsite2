@@ -5,6 +5,13 @@ import IconButton from "@material-ui/core/IconButton";
 // react components for routing our app without refresh
 import { Link } from "react-router-dom";
 
+// new changes for reference
+ // import recompose 
+import { compose } from 'recompose';
+
+// import router HOC
+import { withRouter } from 'react-router';
+
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
@@ -22,8 +29,15 @@ import styles from "assets/jss/material-kit-react/components/headerLinksStyle.js
 
 const useStyles = makeStyles(styles);
 
-export default function HeaderLinks(props) {
+const HeaderLinks = (props) => {
   const classes = useStyles();
+  
+  const pushTo = (route = "/") => () =>  {
+    // Object Destructing. Same as const push = props.history.push but shorter and nicer.
+    const { history: { push } } = props;
+    push(route);
+  };
+
   return (
     <List className={classes.list}>
       {/* <ListItem className={classes.listItem}>
@@ -54,9 +68,9 @@ export default function HeaderLinks(props) {
       </ListItem> */}
       <ListItem className={classes.listItem}>
         <Button
-          href="localhost:3000/services"
+          // href="localhost:3000/services"
           color="transparent"
-          target="_blank"
+          onClick={pushTo('/services')}
           className={classes.navLink}
         >
           <FormatListBulleted className={classes.icons} /> Services
@@ -64,9 +78,9 @@ export default function HeaderLinks(props) {
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
-          href="localhost:3000/booking"
+          // href="localhost:3000/booking"
           color="transparent"
-          target="_blank"
+          onClick={pushTo('/booking')}
           className={classes.navLink}
         >
           <Event className={classes.icons} /> Book Now
@@ -74,9 +88,9 @@ export default function HeaderLinks(props) {
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
-          href="localhost:3000/about"
+          // href="localhost:3000/about"
           color="transparent"
-          target="_blank"
+          onClick={pushTo('/about')}
           className={classes.navLink}
         >
           <Face className={classes.icons} /> About
@@ -84,9 +98,9 @@ export default function HeaderLinks(props) {
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
-          href="localhost:3000/contact"
+          // href="localhost:3000/contact"
           color="transparent"
-          target="_blank"
+          onClick={pushTo('/contact')}
           className={classes.navLink}
         >
           <Devices className={classes.icons} /> Contact
@@ -95,3 +109,5 @@ export default function HeaderLinks(props) {
     </List>
   );
 }
+
+export default compose(withRouter)(HeaderLinks);
