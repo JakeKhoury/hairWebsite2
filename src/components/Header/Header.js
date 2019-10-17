@@ -16,9 +16,16 @@ import Menu from "@material-ui/icons/Menu";
 // core components
 import styles from "assets/jss/material-kit-react/components/headerStyle.js";
 
+// new changes for reference
+// import recompose 
+import { compose } from 'recompose';
+
+// import router HOC
+import { withRouter } from 'react-router';
+
 const useStyles = makeStyles(styles);
 
-export default function Header(props) {
+const Header = (props) => {
   const classes = useStyles();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   React.useEffect(() => {
@@ -60,11 +67,17 @@ export default function Header(props) {
     [classes.absolute]: absolute,
     [classes.fixed]: fixed
   });
+
+  const pushTo = (route = "/") => () =>  {
+    // Object Destructing. Same as const push = props.history.push but shorter and nicer.
+    const { history: { push } } = props;
+    push(route);
+  };
   
   const brandComponent = (
     <div>
-      <img src={logo} style={{width: 60, height: 'auto'}} />
-      <Button className={classes.title}>{brand}</Button>
+      <img src={logo} onClick={pushTo('/')} style={{width: 60, height: 'auto'}} />
+      <Button className={classes.title} onClick={pushTo('/')}>{brand}</Button>
     </div>
   );
   
@@ -113,6 +126,8 @@ export default function Header(props) {
     </AppBar>
   );
 }
+
+export default compose(withRouter)(Header);
 
 Header.defaultProp = {
   color: "white"
