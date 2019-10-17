@@ -19,7 +19,7 @@ import ListItem from "@material-ui/core/ListItem";
 import Tooltip from "@material-ui/core/Tooltip";
 
 // @material-ui/icons
-import { Apps, CloudDownload, FormatListBulleted, Event, Face, Devices } from "@material-ui/icons";
+import { FormatListBulleted, Event, Face, Devices, AccountCircle } from "@material-ui/icons";
 
 // core components
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
@@ -96,7 +96,7 @@ const HeaderLinks = (props) => {
           <Face className={classes.icons} /> About
         </Button>
       </ListItem>
-      <ListItem className={classes.listItem}>
+      {/* <ListItem className={classes.listItem}>
         <Button
           // href="localhost:3000/contact"
           color="transparent"
@@ -104,6 +104,16 @@ const HeaderLinks = (props) => {
           className={classes.navLink}
         >
           <Devices className={classes.icons} /> Contact
+        </Button>
+      </ListItem> */}
+      <ListItem className={classes.listItem}>
+        <Button
+          // href="localhost:3000/contact"
+          color="transparent"
+          onClick={pushTo('/login')}
+          className={classes.navLink}
+        >
+          <AccountCircle className={classes.icons} /> Account
         </Button>
       </ListItem>
     </List>

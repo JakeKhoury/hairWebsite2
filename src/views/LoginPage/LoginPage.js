@@ -65,8 +65,8 @@ export default function LoginPage(props) {
               <Card className={classes[cardAnimaton]}>
                 <form className={classes.form}>
                   <CardHeader color="primary" className={classes.cardHeader}>
-                    <h4>Login</h4>
-                    <div className={classes.socialLine}>
+                    <h4>Create Account</h4>
+                    {/* <div className={classes.socialLine}>
                       <Button
                         justIcon
                         href="#pablo"
@@ -94,9 +94,9 @@ export default function LoginPage(props) {
                       >
                         <i className={"fab fa-google-plus-g"} />
                       </Button>
-                    </div>
+                    </div> */}
                   </CardHeader>
-                  <p className={classes.divider}>Or Be Classical</p>
+                  {/* <p className={classes.divider}>Or Be Classical</p> */}
                   <CardBody>
                     <CustomInput
                       labelText="First Name..."
@@ -149,8 +149,9 @@ export default function LoginPage(props) {
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
                     <Button simple color="primary" size="lg">
-                      Get started
+                      Sign Up
                     </Button>
+                    {/* <p className={classes.divider}>Have an account? Login here.</p> */}
                   </CardFooter>
                 </form>
               </Card>

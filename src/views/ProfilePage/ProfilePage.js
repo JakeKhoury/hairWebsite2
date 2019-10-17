@@ -17,7 +17,7 @@ import HeaderLinks from "components/Header/HeaderLinks.js";
 import NavPills from "components/NavPills/NavPills.js";
 import Parallax from "components/Parallax/Parallax.js";
 
-import profile from "assets/img/faces/christian.jpg";
+import profile from "assets/img/faces/avatar.png";
 
 import studio1 from "assets/img/examples/studio-1.jpg";
 import studio2 from "assets/img/examples/studio-2.jpg";
@@ -62,7 +62,7 @@ export default function ProfilePage(props) {
         }}
         {...rest}
       />
-      <Parallax small filter image={require("assets/img/profile-bg.jpg")} />
+      <Parallax small filter image={require("assets/img/antique-barbershop-blur.jpg")} />
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div>
           <div className={classes.container}>
@@ -75,7 +75,7 @@ export default function ProfilePage(props) {
                   <div className={classes.name}>
                     <h3 className={classes.title}>Dalton Martin</h3>
                     <h6>HAIRSTYLIST</h6>
-                    <Button justIcon link className={classes.margin5}>
+                    {/* <Button justIcon link className={classes.margin5}>
                       <i className={"fab fa-twitter"} />
                     </Button>
                     <Button justIcon link className={classes.margin5}>
@@ -83,7 +83,7 @@ export default function ProfilePage(props) {
                     </Button>
                     <Button justIcon link className={classes.margin5}>
                       <i className={"fab fa-facebook"} />
-                    </Button>
+                    </Button> */}
                   </div>
                 </div>
               </GridItem>
