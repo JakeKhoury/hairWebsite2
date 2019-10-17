@@ -59,7 +59,9 @@ export default function LandingPage(props) {
         }}
         {...rest}
       />
-      <Parallax filter image={require("assets/img/woman-hair-styling.jpg")}>
+      {/* <Parallax filter image={require("assets/img/woman-hair-styling.jpg")}> */}
+      {/* <Parallax filter image={require("assets/img/brunette-woman-in-salon-chair.jpg")}> */}
+      <Parallax filter image={require("assets/img/hairdresser.jpg")}>
         <div className={classes.container}>
           <GridContainer name="titleText" /*style={titleStyle}*/>
             <GridItem xs={12} sm={12} md={6}>
