@@ -50,13 +50,13 @@ export default function LandingPage(props) {
         }}
         {...rest}
       />
-      <Parallax filter image={require("assets/img/woman-hair.jpg")}>
+      <Parallax filter image={require("assets/img/landingPageBG2.png")}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
               <h1 className={classes.title}>Professional care for your hair.</h1>
               <h4 style={paraStyle}>
-                Quality hair care services for <strong>women</strong> and <strong>men</strong>. Whether you
+                Quality hair care services for <strong>men</strong> and <strong>women</strong>. Whether you
                 just need a touch up or you want to reinvent your whole look, Dalton
                 will take care of you with professional styling.
               </h4>

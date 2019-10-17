@@ -32,6 +32,10 @@ import work5 from "assets/img/examples/clem-onojegaw.jpg";
 
 import styles from "assets/jss/material-kit-react/views/profilePage.js";
 
+import logo from 'assets/img/badge.png';
+
+const dashboardRoutes = [];
+
 const useStyles = makeStyles(styles);
 
 export default function ProfilePage(props) {
@@ -47,11 +51,13 @@ export default function ProfilePage(props) {
     <div>
       <Header
         color="transparent"
-        brand="Material Kit React"
+        routes={dashboardRoutes}
+        logo={logo}
+        brand="Hair by Dalton"
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
-          height: 200,
+          height: 400,
           color: "white"
         }}
         {...rest}
@@ -67,8 +73,8 @@ export default function ProfilePage(props) {
                     <img src={profile} alt="..." className={imageClasses} />
                   </div>
                   <div className={classes.name}>
-                    <h3 className={classes.title}>Christian Louboutin</h3>
-                    <h6>DESIGNER</h6>
+                    <h3 className={classes.title}>Dalton Martin</h3>
+                    <h6>HAIRSTYLIST</h6>
                     <Button justIcon link className={classes.margin5}>
                       <i className={"fab fa-twitter"} />
                     </Button>

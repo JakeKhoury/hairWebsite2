@@ -5,8 +5,8 @@ import { Router, Route, Switch } from "react-router-dom";
 
 import "assets/scss/material-kit-react.scss?v=1.8.0";
 
-// pages for this product
-import Components from "views/Components/Components.js";
+// pages for this website
+//import Components from "views/Components/Components.js";
 import LandingPage from "views/LandingPage/LandingPage.js";
 import ProfilePage from "views/ProfilePage/ProfilePage.js";
 import LoginPage from "views/LoginPage/LoginPage.js";
@@ -19,7 +19,9 @@ ReactDOM.render(
     <Switch>
       {/* <Route path="/components" component={Components} /> */}
       <Route path="/services" component={ServicesPage} />
+      <Route path="/booking" component={ServicesPage} />
       <Route path="/about" component={ProfilePage} />
+      <Route path="/contact" component={ServicesPage} />
       <Route path="/login" component={LoginPage} />
       <Route path="/" component={LandingPage} />
     </Switch>

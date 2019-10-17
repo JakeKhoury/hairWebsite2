@@ -23,6 +23,10 @@ import styles from "assets/jss/material-kit-react/views/loginPage.js";
 
 import image from "assets/img/bg7.jpg";
 
+import logo from 'assets/img/badge.png';
+
+const dashboardRoutes = [];
+
 const useStyles = makeStyles(styles);
 
 export default function LoginPage(props) {
@@ -35,10 +39,16 @@ export default function LoginPage(props) {
   return (
     <div>
       <Header
-        absolute
         color="transparent"
-        brand="Material Kit React"
+        routes={dashboardRoutes}
+        logo={logo}
+        brand="Hair by Dalton"
         rightLinks={<HeaderLinks />}
+        fixed
+        changeColorOnScroll={{
+          height: 400,
+          color: "white"
+        }}
         {...rest}
       />
       <div
