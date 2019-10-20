@@ -19,8 +19,6 @@ import styles from "assets/jss/material-kit-react/views/landingPage.js";
 
 // Sections for this page
 import ProductSection from "./Sections/ProductSection.js";
-import TeamSection from "./Sections/TeamSection.js";
-import WorkSection from "./Sections/WorkSection.js";
 
 import logo from 'assets/img/badge.png';
 
@@ -70,17 +68,6 @@ export default function LandingPage(props) {
               <h4 style={paraStyle}>
                 Here{"'"}s what we can do for you.
               </h4>
-              {/* <br />
-              <Button
-                color="danger"
-                size="lg"
-                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ref=creativetim"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fas fa-play" />
-                Watch video
-              </Button> */}
             </GridItem>
           </GridContainer>
         </div>
@@ -88,8 +75,6 @@ export default function LandingPage(props) {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <ProductSection />
-          {/* <TeamSection /> */}
-          {/* <WorkSection /> */}
         </div>
       </div>
       <Footer />

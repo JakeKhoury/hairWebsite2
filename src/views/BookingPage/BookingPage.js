@@ -21,6 +21,7 @@ import styles from "assets/jss/material-kit-react/views/landingPage.js";
 import ProductSection from "./Sections/ProductSection.js";
 import TeamSection from "./Sections/TeamSection.js";
 import WorkSection from "./Sections/WorkSection.js";
+import ScheduleSection from "./Sections/ScheduleSection.js"
 
 import logo from 'assets/img/badge.png';
 
@@ -87,7 +88,8 @@ export default function LandingPage(props) {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          <ProductSection />
+          {/* <ScheduleSection /> */}
+          {/* <ProductSection /> */}
           {/* <TeamSection /> */}
           {/* <WorkSection /> */}
         </div>
