@@ -2,6 +2,8 @@ import React from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
+import { spacing } from '@material-ui/system';
+
 // @material-ui/icons
 import Chat from "@material-ui/icons/Chat";
 import VerifiedUser from "@material-ui/icons/VerifiedUser";
@@ -28,7 +30,7 @@ export default function ProductSection() {
     <div className={classes.section}>
       <GridContainer justify="center">
         <GridItem xs={12} sm={12} md={8}>
-          <Card>
+          <Card className={classes.card}>
             <CardHeader color="info">Men's Express Haircut - $45</CardHeader>
             <CardBody>
               <Quote
@@ -37,7 +39,7 @@ export default function ProductSection() {
               />
             </CardBody>
           </Card>
-          <Card>
+          <Card className={classes.card}>
             <CardHeader color="info">Men's Deluxe Haircut - $55</CardHeader>
             <CardBody>
               <Quote
@@ -46,7 +48,7 @@ export default function ProductSection() {
               />
             </CardBody>
           </Card>
-          <Card>
+          <Card className={classes.card}>
             <CardHeader color="info">Women's Express Haircut - $75</CardHeader>
             <CardBody>
               <Quote
@@ -55,7 +57,7 @@ export default function ProductSection() {
               />
             </CardBody>
           </Card>
-          <Card>
+          <Card className={classes.card}>
             <CardHeader color="info">Women's Hair Coloring - $95</CardHeader>
             <CardBody>
               <Quote

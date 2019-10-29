@@ -6,7 +6,6 @@ import { Router, Route, Switch } from "react-router-dom";
 import "assets/scss/material-kit-react.scss?v=1.8.0";
 
 // pages for this website
-//import Components from "views/Components/Components.js";
 import LandingPage from "views/LandingPage/LandingPage.js";
 import ProfilePage from "views/ProfilePage/ProfilePage.js";
 import LoginPage from "views/LoginPage/LoginPage.js";
@@ -18,11 +17,9 @@ var hist = createBrowserHistory();
 ReactDOM.render(
   <Router history={hist}>
     <Switch>
-      {/* <Route path="/components" component={Components} /> */}
       <Route path="/services" component={ServicesPage} />
       <Route path="/booking" component={BookingPage} />
       <Route path="/about" component={ProfilePage} />
-      <Route path="/contact" component={ServicesPage} />
       <Route path="/login" component={LoginPage} />
       <Route path="/" component={LandingPage} />
     </Switch>

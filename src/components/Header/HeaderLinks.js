@@ -30,58 +30,35 @@ import styles from "assets/jss/material-kit-react/components/headerLinksStyle.js
 const useStyles = makeStyles(styles);
 
 const HeaderLinks = (props) => {
-  const classes = useStyles();
+  const classes = useStyles(props);
   
   const pushTo = (route = "/") => () =>  {
     // Object Destructing. Same as const push = props.history.push but shorter and nicer.
     const { history: { push } } = props;
     push(route);
   };
+  
+  const matchesRoute = (route) => {
+    const { history: {location: { pathname } }} = props;
+    return route === pathname;
+  }
 
   return (
     <List className={classes.list}>
-      {/* <ListItem className={classes.listItem}>
-        <CustomDropdown
-          noLiPadding
-          buttonText="Services"
-          buttonProps={{
-            className: classes.navLink,
-            color: "transparent"
-          }}
-          buttonIcon={Apps}
-          dropdownList={[
-            <Link to="/login-page" className={classes.dropdownLink}>
-              For Women
-            </Link>,
-            <Link to="/" className={classes.dropdownLink}>
-              For Men
-            </Link>
-            // <a
-            //   href=""
-            //   target="_blank"
-            //   className={classes.dropdownLink}
-            // >
-            //   For Men
-            // </a>
-          ]}
-        />
-      </ListItem> */}
       <ListItem className={classes.listItem}>
         <Button
-          // href="localhost:3000/services"
           color="transparent"
           onClick={pushTo('/services')}
-          className={classes.navLink}
+          className={matchesRoute('/services') ? classes.navLinkHover : classes.navLink}
         >
           <FormatListBulleted className={classes.icons} /> Services
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
-          // href="localhost:3000/booking"
           color="transparent"
           onClick={pushTo('/booking')}
-          className={classes.navLink}
+          className={matchesRoute('/booking') ? classes.navLinkHover : classes.navLink}
         >
           <Event className={classes.icons} /> Book Now
         </Button>
@@ -91,27 +68,17 @@ const HeaderLinks = (props) => {
           // href="localhost:3000/about"
           color="transparent"
           onClick={pushTo('/about')}
-          className={classes.navLink}
+          className={matchesRoute('/about') ? classes.navLinkHover : classes.navLink}
+
         >
           <Face className={classes.icons} /> About
         </Button>
       </ListItem>
-      {/* <ListItem className={classes.listItem}>
-        <Button
-          // href="localhost:3000/contact"
-          color="transparent"
-          onClick={pushTo('/contact')}
-          className={classes.navLink}
-        >
-          <Devices className={classes.icons} /> Contact
-        </Button>
-      </ListItem> */}
       <ListItem className={classes.listItem}>
         <Button
-          // href="localhost:3000/contact"
           color="transparent"
           onClick={pushTo('/login')}
-          className={classes.navLink}
+          className={matchesRoute('/login') ? classes.navLinkHover : classes.navLink}
         >
           <AccountCircle className={classes.icons} /> Account
         </Button>

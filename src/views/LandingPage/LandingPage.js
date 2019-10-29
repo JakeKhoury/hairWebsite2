@@ -60,29 +60,16 @@ export default function LandingPage(props) {
                 just need a touch up or you want to reinvent your whole look, Dalton
                 will take care of you with professional styling.
               </h4>
-              <br />
-              {/* <Button
-                color="danger"
-                size="lg"
-                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ref=creativetim"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fas fa-play" />
-                Watch video
-              </Button> */}
             </GridItem>
           </GridContainer>
         </div>
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          <ProductSection />
-          {/* <TeamSection /> */}
-          {/* <WorkSection /> */}
+          {/* <ExtraSection /> */}
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

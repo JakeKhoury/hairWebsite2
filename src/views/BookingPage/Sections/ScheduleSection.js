@@ -1,63 +1,43 @@
 import React, { Fragment, useState } from "react";
-// import { DatePicker } from "material-ui-pickers";
+import Datetime from "react-datetime";
+
+import { makeStyles } from "@material-ui/core/styles";
+import InputLabel from "@material-ui/core/InputLabel";
+import FormControl from "@material-ui/core/FormControl";
+
+import "./scheduleStyle.css";
+
+const styles = {
+  label: {
+    cursor: "pointer",
+    paddingLeft: "0",
+    color: "rgba(0, 0, 0, 0.26)",
+    fontSize: "14px",
+    lineHeight: "1.428571429",
+    fontWeight: "400",
+    display: "inline-flex"
+  }
+};
+
+const useStyles = makeStyles(styles);
 
 export default function ScheduleSection() {
-  // The first commit of Material-UI
-//   const [selectedDate, handleDateChange] = useState(new Date());
+  const classes = useStyles();
 
-//   const handleDateChange = date => {
-//     setSelectedDate(date);
-//   };
+  //The first commit of Material-UI
+  //const [selectedDate, handleDateChange] = useState(new Date());
+
+  //   const handleDateChange = date => {
+  //     setSelectedDate(date);
+  //   };
 
   return (
-    // <MuiPickersUtilsProvider utils={DateFnsUtils}>
-    //   <Grid container justify="space-around">
-    //     <KeyboardDatePicker
-    //       disableToolbar
-    //       variant="inline"
-    //       format="MM/dd/yyyy"
-    //       margin="normal"
-    //       id="date-picker-inline"
-    //       label="Date picker inline"
-    //       value={selectedDate}
-    //       onChange={handleDateChange}
-    //       KeyboardButtonProps={{
-    //         'aria-label': 'change date',
-    //       }}
-    //     />
-    //     <KeyboardDatePicker
-    //       margin="normal"
-    //       id="date-picker-dialog"
-    //       label="Date picker dialog"
-    //       format="MM/dd/yyyy"
-    //       value={selectedDate}
-    //       onChange={handleDateChange}
-    //       KeyboardButtonProps={{
-    //         'aria-label': 'change date',
-    //       }}
-    //     />
-    //     <KeyboardTimePicker
-    //       margin="normal"
-    //       id="time-picker"
-    //       label="Time picker"
-    //       value={selectedDate}
-    //       onChange={handleDateChange}
-    //       KeyboardButtonProps={{
-    //         'aria-label': 'change time',
-    //       }}
-    //     />
-    //   </Grid>
-    // </MuiPickersUtilsProvider>
-    // <div className="picker">
-    //   <DatePicker
-    //     autoOk
-    //     label="Clearable"
-    //     clearable
-    //     disableFuture
-    //     value={selectedDate}
-    //     onChange={handleDateChange}
-    //   />
-    // </div>
-    <div></div>
+    <div>
+      <InputLabel className={classes.label}>Datetime Picker</InputLabel>
+      <br />
+      <FormControl fullWidth>
+        <Datetime inputProps={{ placeholder: "Datetime Picker Here" }} />
+      </FormControl>
+    </div>
   );
 }
