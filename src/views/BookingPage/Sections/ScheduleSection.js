@@ -33,10 +33,10 @@ export default function ScheduleSection() {
 
   return (
     <div>
-      <InputLabel className={classes.label}>Datetime Picker</InputLabel>
+      <InputLabel className={classes.label}>Choose The Date</InputLabel>
       <br />
       <FormControl fullWidth>
-        <Datetime inputProps={{ placeholder: "Datetime Picker Here" }} />
+        <Datetime inputProps={{ placeholder: "Click Here To Select" }} />
       </FormControl>
     </div>
   );
