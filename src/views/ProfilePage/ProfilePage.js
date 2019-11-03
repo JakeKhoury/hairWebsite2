@@ -100,8 +100,8 @@ export default function ProfilePage(props) {
                   color="primary"
                   tabs={[
                     {
-                      tabButton: "Location",
-                      tabIcon: LocationCity,
+                      tabButton: "Contact",
+                      tabIcon: Devices,
                       tabContent: (
                         <GridContainer justify="center">
                           <GridItem xs={12} sm={12} md={4}>
@@ -137,8 +137,8 @@ export default function ProfilePage(props) {
                       )
                     },
                     {
-                      tabButton: "Contact",
-                      tabIcon: Devices,
+                      tabButton: "Location",
+                      tabIcon: LocationCity,
                       tabContent: (
                         <GridContainer justify="center">
                           <GridItem xs={12} sm={12} md={4}>
