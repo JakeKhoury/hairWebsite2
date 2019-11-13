@@ -149,6 +149,9 @@ export default function LoginPage(props) {
                     />
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
+                    <a>
+                      Already have an account? Login here
+                    </a>
                     <Button simple color="primary" size="lg">
                       Sign Up
                     </Button>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Map, Marker, GoogleApiWrapper } from "google-maps-react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // @material-ui/core components
@@ -15,6 +16,7 @@ import GridItem from "components/Grid/GridItem.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import NavPills from "components/NavPills/NavPills.js";
 import Parallax from "components/Parallax/Parallax.js";
+import MapContainer from "components/MapContainer/MapContainer.js";
 
 import profile from "assets/img/faces/avatar.png";
 
@@ -31,7 +33,7 @@ import profile from "assets/img/faces/avatar.png";
 
 import styles from "assets/jss/material-kit-react/views/profilePage.js";
 
-import logo from 'assets/img/badge.png';
+import logo from "assets/img/badge.png";
 
 const dashboardRoutes = [];
 
@@ -61,7 +63,11 @@ export default function ProfilePage(props) {
         }}
         {...rest}
       />
-      <Parallax small filter image={require("assets/img/antique-barbershop-blur.jpg")} />
+      <Parallax
+        small
+        filter
+        image={require("assets/img/antique-barbershop-blur.jpg")}
+      />
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div>
           <div className={classes.container}>
@@ -89,8 +95,9 @@ export default function ProfilePage(props) {
             </GridContainer>
             <div className={classes.description}>
               <p>
-                This is where the description of the servicer will go. Here you can provide
-                details, background information, and other content specific to the servicer.{" "}
+                This is where the description of the servicer will go. Here you
+                can provide details, background information, and other content
+                specific to the servicer.{" "}
               </p>
             </div>
             <GridContainer justify="center">
@@ -105,33 +112,10 @@ export default function ProfilePage(props) {
                       tabContent: (
                         <GridContainer justify="center">
                           <GridItem xs={12} sm={12} md={4}>
-                            {/* <img
-                              alt="..."
-                              src={work1}
-                              className={navImageClasses}
-                            />
-                            <img
-                              alt="..."
-                              src={work2}
-                              className={navImageClasses}
-                            />
-                            <img
-                              alt="..."
-                              src={work3}
-                              className={navImageClasses}
-                            /> */}
+
                           </GridItem>
                           <GridItem xs={12} sm={12} md={4}>
-                            {/* <img
-                              alt="..."
-                              src={work4}
-                              className={navImageClasses}
-                            />
-                            <img
-                              alt="..."
-                              src={work5}
-                              className={navImageClasses}
-                            /> */}
+
                           </GridItem>
                         </GridContainer>
                       )
@@ -142,33 +126,12 @@ export default function ProfilePage(props) {
                       tabContent: (
                         <GridContainer justify="center">
                           <GridItem xs={12} sm={12} md={4}>
-                            {/* <img
-                              alt="..."
-                              src={work4}
-                              className={navImageClasses}
-                            />
-                            <img
-                              alt="..."
-                              src={studio3}
-                              className={navImageClasses}
-                            /> */}
+                            <div>
+                              <MapContainer />
+                            </div>
                           </GridItem>
                           <GridItem xs={12} sm={12} md={4}>
-                            {/* <img
-                              alt="..."
-                              src={work2}
-                              className={navImageClasses}
-                            />
-                            <img
-                              alt="..."
-                              src={work1}
-                              className={navImageClasses}
-                            />
-                            <img
-                              alt="..."
-                              src={studio1}
-                              className={navImageClasses}
-                            /> */}
+                            
                           </GridItem>
                         </GridContainer>
                       )

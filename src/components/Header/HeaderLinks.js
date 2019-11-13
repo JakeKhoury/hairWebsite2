@@ -6,7 +6,7 @@ import IconButton from "@material-ui/core/IconButton";
 import { Link } from "react-router-dom";
 
 // new changes for reference
- // import recompose 
+// import recompose 
 import { compose } from 'recompose';
 
 // import router HOC

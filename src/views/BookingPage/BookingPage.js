@@ -71,17 +71,6 @@ export default function LandingPage(props) {
               <h4 style={paraStyle}>
                 See what{"'"}s available and request your appointent now.
               </h4>
-              {/* <br />
-              <Button
-                color="danger"
-                size="lg"
-                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ref=creativetim"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fas fa-play" />
-                Watch video
-              </Button> */}
             </GridItem>
           </GridContainer>
         </div>
