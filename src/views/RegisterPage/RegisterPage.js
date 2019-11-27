@@ -147,6 +147,24 @@ export default function LoginPage(props) {
                         autoComplete: "off"
                       }}
                     />
+                    <CustomInput
+                      labelText="Confirm Password"
+                      id="passConfirm"
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                      inputProps={{
+                        type: "password",
+                        endAdornment: (
+                          <InputAdornment position="end">
+                            <Icon className={classes.inputIconsColor}>
+                              lock_outline
+                            </Icon>
+                          </InputAdornment>
+                        ),
+                        autoComplete: "off"
+                      }}
+                    />
                   </CardBody>
                   <a href="/login" style={{display: 'flex', justifyContent: 'center'}}>Already have an account? Login here</a>
                   <CardFooter className={classes.cardFooter}>
