@@ -126,9 +126,7 @@ export default function ProfilePage(props) {
                       tabContent: (
                         <GridContainer justify="center">
                           <GridItem xs={12} sm={12} md={4}>
-                            <div>
-                              <MapContainer />
-                            </div>
+                            <MapContainer />
                           </GridItem>
                           <GridItem xs={12} sm={12} md={4}>
                             

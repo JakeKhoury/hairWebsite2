@@ -77,8 +77,8 @@ const HeaderLinks = (props) => {
       <ListItem className={classes.listItem}>
         <Button
           color="transparent"
-          onClick={pushTo('/login')}
-          className={matchesRoute('/login') ? classes.navLinkHover : classes.navLink}
+          onClick={pushTo('/register')}
+          className={matchesRoute('/register') ? classes.navLinkHover : classes.navLink}
         >
           <AccountCircle className={classes.icons} /> Account
         </Button>

@@ -66,9 +66,54 @@ export default function LoginPage(props) {
               <Card className={classes[cardAnimaton]}>
                 <form className={classes.form}>
                   <CardHeader color="primary" className={classes.cardHeader}>
-                    <h4>Login</h4>
+                    <h4>Create Account</h4>
+                    {/* <div className={classes.socialLine}>
+                      <Button
+                        justIcon
+                        href="#pablo"
+                        target="_blank"
+                        color="transparent"
+                        onClick={e => e.preventDefault()}
+                      >
+                        <i className={"fab fa-twitter"} />
+                      </Button>
+                      <Button
+                        justIcon
+                        href="#pablo"
+                        target="_blank"
+                        color="transparent"
+                        onClick={e => e.preventDefault()}
+                      >
+                        <i className={"fab fa-facebook"} />
+                      </Button>
+                      <Button
+                        justIcon
+                        href="#pablo"
+                        target="_blank"
+                        color="transparent"
+                        onClick={e => e.preventDefault()}
+                      >
+                        <i className={"fab fa-google-plus-g"} />
+                      </Button>
+                    </div> */}
                   </CardHeader>
+                  {/* <p className={classes.divider}>Or Be Classical</p> */}
                   <CardBody>
+                    <CustomInput
+                      labelText="First Name"
+                      id="first"
+                      formControlProps={{
+                        fullWidth: true
+                      }}
+                      inputProps={{
+                        type: "text",
+                        endAdornment: (
+                          <InputAdornment position="end">
+                            <People className={classes.inputIconsColor} />
+                          </InputAdornment>
+                        )
+                      }}
+                    />
                     <CustomInput
                       labelText="Email"
                       id="email"
@@ -103,10 +148,10 @@ export default function LoginPage(props) {
                       }}
                     />
                   </CardBody>
-                  <a href="/register" style={{display: 'flex', justifyContent: 'center'}}>Don't have an account? Create one here</a>
+                  <a href="/login" style={{display: 'flex', justifyContent: 'center'}}>Already have an account? Login here</a>
                   <CardFooter className={classes.cardFooter}>
                     <Button simple color="primary" size="lg">
-                      Sign In
+                      Sign Up
                     </Button>
                   </CardFooter>
                 </form>
