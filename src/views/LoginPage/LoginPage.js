@@ -21,6 +21,7 @@ import CustomInput from "components/CustomInput/CustomInput.js";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "assets/jss/material-kit-react/views/loginPage.js";
 import { USER_SIGN_IN } from "actions/actionTypes";
+import { useHistory } from 'react-router-dom';
 //import image from "assets/img/bg7.jpg";
 import image from "assets/img/hands-blow-drying-hair.jpg";
 import Swal from "sweetalert2";
@@ -33,6 +34,7 @@ const useStyles = makeStyles(styles);
 export default function LoginPage(props) {
   // store shit
   const dispatch = useDispatch();
+  const { push } = useHistory();
 
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
   const [email, setEmail] = useState("");
@@ -53,7 +55,7 @@ export default function LoginPage(props) {
         type: USER_SIGN_IN,
         payload: { token, email: user.email, name: user.name }
       });
-      console.log("EMAIL => ", email);
+      push("/dashboard");   
     } catch (e) {
       Swal.fire({
         icon: "error",

@@ -17,7 +17,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import Tooltip from "@material-ui/core/Tooltip";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { USER_SIGN_OUT } from "actions/actionTypes";
+import Swal from "sweetalert2";
 // @material-ui/icons
 import {
   FormatListBulleted,
@@ -38,12 +40,29 @@ const useStyles = makeStyles(styles);
 const HeaderLinks = props => {
   const classes = useStyles(props);
   const name = useSelector(state => state.user.name);
+  const dispatch = useDispatch();
+
   const pushTo = (route = "/") => () => {
     // Object Destructing. Same as const push = props.history.push but shorter and nicer.
     const {
       history: { push }
     } = props;
     push(route);
+  };
+
+  const logout = async () => {
+    try {
+      dispatch({
+        type: USER_SIGN_OUT,
+        payload: {}
+      });
+    } catch (e) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: e
+      });
+    }
   };
 
   const matchesRoute = route => {
@@ -108,20 +127,28 @@ const HeaderLinks = props => {
           buttonText={name ? name : "Account"}
           buttonProps={{
             className: classes.navLink,
-            color: "transparent",
+            color: "transparent"
           }}
           buttonIcon={AccountCircle}
-          dropdownList={[
-            <Link to="/register" className={classes.dropdownLink}>
-              Create Account
-            </Link>,
-            <Link to="/login" className={classes.dropdownLink}>
-              Log In
-            </Link>,
-            <Link to="/" className={classes.dropdownLink}>
-              Log Out
-            </Link>
-          ]}
+          dropdownList={
+            name
+              ? [
+                  <Link to="/" onClick={logout} className={classes.dropdownLink}>
+                    Log Out
+                  </Link>,
+                  <Link to="/dashboard" className={classes.dropdownLink}>
+                    Dashboard
+                  </Link>
+                ]
+              : [
+                  <Link to="/register" className={classes.dropdownLink}>
+                    Create Account
+                  </Link>,
+                  <Link to="/login" className={classes.dropdownLink}>
+                    Log In
+                  </Link>
+                ]
+          }
         />
       </ListItem>
     </List>

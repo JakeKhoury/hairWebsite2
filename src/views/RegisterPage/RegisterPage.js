@@ -43,11 +43,11 @@ const LoginPage = (props)  =>{
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const signup = async () => {
-    if (!passwordsMatch) {
+    if (!passwordsMatch()) {
       return Swal.fire({
         icon: 'warning',
         title: "Validation Error",
-        text: "Passwords Dont Match",
+        text: "Passwords Don't Match",
       });
     }
 
