@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -18,8 +18,9 @@ import CardBody from "components/Card/CardBody.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardFooter from "components/Card/CardFooter.js";
 import CustomInput from "components/CustomInput/CustomInput.js";
-
 import styles from "assets/jss/material-kit-react/views/loginPage.js";
+import { useHistory } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 //import image from "assets/img/bg7.jpg";
 import image from "assets/img/hands-blow-drying-hair.jpg";
@@ -30,12 +31,54 @@ const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
 
-export default function LoginPage(props) {
-  const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
-  setTimeout(function() {
-    setCardAnimation("");
-  }, 700);
+const LoginPage = (props)  =>{
+
   const classes = useStyles();
+  const { push } = useHistory();
+
+  const [cardAnimaton, setCardAnimation] = React.useState("");
+  const [firstName, setFirstName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const signup = async () => {
+    if (!passwordsMatch) {
+      return Swal.fire({
+        icon: 'warning',
+        title: "Validation Error",
+        text: "Passwords Dont Match",
+      });
+    }
+
+    try { 
+    const url = "http://localhost:8080/user/register";
+    await fetch(url, 
+      {
+        method: "POST",
+        body: JSON.stringify({ name: firstName, email, password }),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+    );
+    Swal.fire(
+      'Success!',
+      'Thank you for making an account with us!',
+      'success'
+    )
+    push("/login");    
+    }catch(e) {
+      Swal.fire({
+        icon: 'error',
+        title: "Error",
+        text: e,
+      })
+    }
+  }
+
+  const passwordsMatch = () => password === confirmPassword
+
   const { ...rest } = props;
   return (
     <div>
@@ -67,37 +110,7 @@ export default function LoginPage(props) {
                 <form className={classes.form}>
                   <CardHeader color="primary" className={classes.cardHeader}>
                     <h4>Create Account</h4>
-                    {/* <div className={classes.socialLine}>
-                      <Button
-                        justIcon
-                        href="#pablo"
-                        target="_blank"
-                        color="transparent"
-                        onClick={e => e.preventDefault()}
-                      >
-                        <i className={"fab fa-twitter"} />
-                      </Button>
-                      <Button
-                        justIcon
-                        href="#pablo"
-                        target="_blank"
-                        color="transparent"
-                        onClick={e => e.preventDefault()}
-                      >
-                        <i className={"fab fa-facebook"} />
-                      </Button>
-                      <Button
-                        justIcon
-                        href="#pablo"
-                        target="_blank"
-                        color="transparent"
-                        onClick={e => e.preventDefault()}
-                      >
-                        <i className={"fab fa-google-plus-g"} />
-                      </Button>
-                    </div> */}
                   </CardHeader>
-                  {/* <p className={classes.divider}>Or Be Classical</p> */}
                   <CardBody>
                     <CustomInput
                       labelText="First Name"
@@ -107,6 +120,8 @@ export default function LoginPage(props) {
                       }}
                       inputProps={{
                         type: "text",
+                        value: firstName,
+                        onChange: (e) => setFirstName(e.target.value),
                         endAdornment: (
                           <InputAdornment position="end">
                             <People className={classes.inputIconsColor} />
@@ -122,6 +137,8 @@ export default function LoginPage(props) {
                       }}
                       inputProps={{
                         type: "email",
+                        value: email,
+                        onChange: (e) => setEmail(e.target.value),
                         endAdornment: (
                           <InputAdornment position="end">
                             <Email className={classes.inputIconsColor} />
@@ -137,6 +154,8 @@ export default function LoginPage(props) {
                       }}
                       inputProps={{
                         type: "password",
+                        value: password,
+                        onChange: (e) => setPassword(e.target.value),
                         endAdornment: (
                           <InputAdornment position="end">
                             <Icon className={classes.inputIconsColor}>
@@ -155,6 +174,8 @@ export default function LoginPage(props) {
                       }}
                       inputProps={{
                         type: "password",
+                        value: confirmPassword,
+                        onChange: (e) => setConfirmPassword(e.target.value),
                         endAdornment: (
                           <InputAdornment position="end">
                             <Icon className={classes.inputIconsColor}>
@@ -168,7 +189,7 @@ export default function LoginPage(props) {
                   </CardBody>
                   <a href="/login" style={{display: 'flex', justifyContent: 'center'}}>Already have an account? Login here</a>
                   <CardFooter className={classes.cardFooter}>
-                    <Button simple color="primary" size="lg">
+                    <Button simple color="primary" size="lg" onClick={signup}>
                       Sign Up
                     </Button>
                   </CardFooter>
@@ -182,3 +203,5 @@ export default function LoginPage(props) {
     </div>
   );
 }
+
+export default LoginPage;

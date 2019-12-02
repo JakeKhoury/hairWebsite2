@@ -29,7 +29,7 @@ const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
 
-export default function ProfilePage(props) {
+export default function DashboardPage(props) {
   const classes = useStyles();
   const { ...rest } = props;
   const imageClasses = classNames(
@@ -56,61 +56,14 @@ export default function ProfilePage(props) {
       <Parallax
         small
         filter
-        image={require("assets/img/antique-barbershop-blur.jpg")}
+        image={require("assets/img/black.png")}
       />
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div>
           <div className={classes.container}>
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={6}>
-                <div className={classes.profile}>
-                  <div>
-                    <img src={profile} alt="..." className={imageClasses} />
-                  </div>
-                  <div className={classes.name}>
-                    <h3 className={classes.title}>Dalton Martin</h3>
-                    <h6>HAIRSTYLIST</h6>
-                  </div>
-                </div>
-              </GridItem>
-            </GridContainer>
-            <div className={classes.description}>
-              <h4>
-                This is where the description of the servicer will go. Here you
-                can provide details, background information, and other content
-                specific to the servicer.{" "}
-              </h4>
-            </div>
-            <GridContainer justify="center">
-              <GridItem xs={12} sm={12} md={8} className={classes.navWrapper}>
-                <CustomTabs
-                  headerColor="primary"
-                  tabs={[
-                    {
-                      tabName: "Contact",
-                      tabIcon: Devices,
-                      tabContent: (
-                        <div>
-                          <h3>
-                            <b>Cell Phone: </b>(903) 266-0405
-                          </h3>
-                          <h3>
-                            <b>Email: </b>daltonmartin@gmail.com
-                          </h3>
-                        </div>
-                      )
-                    },
-                    {
-                      tabName: "Location",
-                      tabIcon: LocationCity,
-                      tabContent: (
-                          <div style={{width: '100%', height: 500, position: 'relative'}}>
-                            <MapContainer/>
-                          </div>
-                      )
-                    }
-                  ]}
-                />
+                
               </GridItem>
             </GridContainer>
           </div>

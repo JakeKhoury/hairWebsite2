@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -18,12 +18,12 @@ import CardBody from "components/Card/CardBody.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardFooter from "components/Card/CardFooter.js";
 import CustomInput from "components/CustomInput/CustomInput.js";
-
+import { useDispatch, useSelector } from "react-redux";
 import styles from "assets/jss/material-kit-react/views/loginPage.js";
-
+import { USER_SIGN_IN } from "actions/actionTypes";
 //import image from "assets/img/bg7.jpg";
 import image from "assets/img/hands-blow-drying-hair.jpg";
-
+import Swal from "sweetalert2";
 import logo from "assets/img/badge.png";
 
 const dashboardRoutes = [];
@@ -31,10 +31,42 @@ const dashboardRoutes = [];
 const useStyles = makeStyles(styles);
 
 export default function LoginPage(props) {
+  // store shit
+  const dispatch = useDispatch();
+
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const login = async () => {
+    try {
+      const url = "http://localhost:8080/user/login";
+      const result = await fetch(url, {
+        method: "POST",
+        body: JSON.stringify({ email, password }),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+      const { token, user } = await result.json();
+      dispatch({
+        type: USER_SIGN_IN,
+        payload: { token, email: user.email, name: user.name }
+      });
+      console.log("EMAIL => ", email);
+    } catch (e) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: e
+      });
+    }
+  };
+
   setTimeout(function() {
     setCardAnimation("");
   }, 700);
+  
   const classes = useStyles();
   const { ...rest } = props;
   return (
@@ -77,6 +109,8 @@ export default function LoginPage(props) {
                       }}
                       inputProps={{
                         type: "email",
+                        value: email,
+                        onChange: e => setEmail(e.target.value),
                         endAdornment: (
                           <InputAdornment position="end">
                             <Email className={classes.inputIconsColor} />
@@ -92,6 +126,8 @@ export default function LoginPage(props) {
                       }}
                       inputProps={{
                         type: "password",
+                        value: password,
+                        onChange: e => setPassword(e.target.value),
                         endAdornment: (
                           <InputAdornment position="end">
                             <Icon className={classes.inputIconsColor}>
@@ -103,9 +139,14 @@ export default function LoginPage(props) {
                       }}
                     />
                   </CardBody>
-                  <a href="/register" style={{display: 'flex', justifyContent: 'center'}}>Don't have an account? Create one here</a>
+                  <a
+                    href="/register"
+                    style={{ display: "flex", justifyContent: "center" }}
+                  >
+                    Don't have an account? Create one here
+                  </a>
                   <CardFooter className={classes.cardFooter}>
-                    <Button simple color="primary" size="lg">
+                    <Button simple color="primary" size="lg" onClick={login}>
                       Sign In
                     </Button>
                   </CardFooter>

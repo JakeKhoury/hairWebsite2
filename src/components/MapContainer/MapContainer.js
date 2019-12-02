@@ -2,8 +2,10 @@ import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
 import React, { Component } from "react";
 
 const style = {
-  width: '350px',
-  height: '350px'
+  // width: '350px',
+  // height: '350px'
+  width: '100%',
+  height: '100%'
 }
 
 export class MapContainer extends Component {
