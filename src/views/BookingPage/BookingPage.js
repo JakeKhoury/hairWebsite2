@@ -262,7 +262,7 @@ export default function LandingPage(props) {
       return null;
     }
   };
-  const renderStepActions = step => {
+  const renderStepActions = (step) => {
     const { stepIndex } = this.state;
 
     return (
@@ -289,89 +289,47 @@ export default function LandingPage(props) {
     );
   };
 
-  const render = () => {
-    const {
-      finished,
-      isLoading,
-      smallScreen,
-      stepIndex,
-      confirmationModalOpen,
-      confirmationSnackbarOpen,
-      ...data
-    } = this.state;
-    const contactFormFilled =
-      data.firstName &&
-      data.lastName &&
-      data.phone &&
-      data.email &&
-      data.validPhone &&
-      data.validEmail;
-    const DatePickerExampleSimple = () => (
-      <div>
-        <DatePicker
-          hintText="Select Date"
-          mode={smallScreen ? "portrait" : "landscape"}
-          onChange={(n, date) => this.handleSetAppointmentDate(date)}
-          shouldDisableDate={day => this.checkDisableDate(day)}
-        />
-      </div>
-    );
-    const modalActions = [
-      <FlatButton
-        label="Cancel"
-        primary={false}
-        onClick={() => this.setState({ confirmationModalOpen: false })}
-      />,
-      <FlatButton
-        label="Confirm"
-        style={{ backgroundColor: "#00C853 !important" }}
-        primary={true}
-        onClick={() => this.handleSubmit()}
+  return (
+    <div>
+      <Header
+        color="transparent"
+        routes={dashboardRoutes}
+        logo={logo}
+        brand="Hair by Dalton"
+        rightLinks={<HeaderLinks />}
+        fixed
+        changeColorOnScroll={{
+          height: 400,
+          color: "white"
+        }}
+        {...rest}
       />
-    ];
-
-    return (
-      <div>
-        <Header
-          color="transparent"
-          routes={dashboardRoutes}
-          logo={logo}
-          brand="Hair by Dalton"
-          rightLinks={<HeaderLinks />}
-          fixed
-          changeColorOnScroll={{
-            height: 400,
-            color: "white"
-          }}
-          {...rest}
-        />
-        <Parallax
-          filter
-          image={require("assets/img/back-view-blonde-curly-hair.jpg")}
-        >
-          <div className={classes.container}>
-            <GridContainer name="titleText" /*style={titleStyle}*/>
-              <GridItem xs={12} sm={12} md={6}>
-                <h1 className={classes.title}>Book your appointment online.</h1>
-                <br></br>
-                <h4 style={paraStyle}>
-                  See what{"'"}s available and request your appointent now.
-                </h4>
-              </GridItem>
-            </GridContainer>
-          </div>
-        </Parallax>
-        <div className={classNames(classes.main, classes.mainRaised)}>
-          <div className={classes.container}>
-            <GridContainer justify="center">
-              <GridItem xs={12} sm={12} md={6}>
-                <div style={{ height: 300 }}></div>
-              </GridItem>
-            </GridContainer>
-          </div>
+      <Parallax
+        filter
+        image={require("assets/img/back-view-blonde-curly-hair.jpg")}
+      >
+        <div className={classes.container}>
+          <GridContainer name="titleText" /*style={titleStyle}*/>
+            <GridItem xs={12} sm={12} md={6}>
+              <h1 className={classes.title}>Book your appointment online.</h1>
+              <br></br>
+              <h4 style={paraStyle}>
+                See what{"'"}s available and request your appointent now.
+              </h4>
+            </GridItem>
+          </GridContainer>
         </div>
-        <Footer />
+      </Parallax>
+      <div className={classNames(classes.main, classes.mainRaised)}>
+        <div className={classes.container}>
+          <GridContainer justify="center">
+            <GridItem xs={12} sm={12} md={6}>
+              <div style={{ height: 300 }}></div>
+            </GridItem>
+          </GridContainer>
+        </div>
       </div>
-    );
-  };
+      <Footer />
+    </div>
+  );
 }
