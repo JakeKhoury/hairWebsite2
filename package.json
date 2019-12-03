@@ -79,16 +79,5 @@
     ],
     "development": []
   },
-  "proxy": "http://localhost:3001",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JakeKhoury/hairwebsite-web.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JakeKhoury/hairwebsite-web/issues"
-  },
-  "homepage": "https://github.com/JakeKhoury/hairwebsite-web#readme"
+  "proxy": "http://localhost:3001"
 }
