@@ -32,7 +32,7 @@ export default function CustomTabs(props) {
   });
   return (
     <Card plain={plainTabs}>
-      <CardHeader color={headerColor} plain={plainTabs}>
+      <CardHeader color={headerColor} plain={plainTabs} style={{ display: "flex", justifyContent: "center"}}>
         {title !== undefined ? <div className={cardTitle}>{title}</div> : null}
         <Tabs
           value={value}

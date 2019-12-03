@@ -36,7 +36,7 @@ const LoginPage = (props)  =>{
   const classes = useStyles();
   const { push } = useHistory();
 
-  const [cardAnimaton, setCardAnimation] = React.useState("");
+  const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -78,6 +78,10 @@ const LoginPage = (props)  =>{
   }
 
   const passwordsMatch = () => password === confirmPassword
+
+  setTimeout(function() {
+    setCardAnimation("");
+  }, 700);
 
   const { ...rest } = props;
   return (

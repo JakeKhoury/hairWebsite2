@@ -57,11 +57,19 @@ export default function LoginPage(props) {
       });
       push("/dashboard");   
     } catch (e) {
-      Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: e
-      });
+      if ( e == "TypeError: Cannot read property 'email' of undefined" ) {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "Email or Password Incorrect"
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: e
+        });
+      }
     }
   };
 
