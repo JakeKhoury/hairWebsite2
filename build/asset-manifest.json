@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b1de2a99.chunk.css",
+    "main.js": "/static/js/main.00c83b8f.chunk.js",
+    "main.js.map": "/static/js/main.00c83b8f.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.ce8e2f07.js",
+    "runtime~main.js.map": "/static/js/runtime~main.ce8e2f07.js.map",
+    "static/js/2.d0a92d37.chunk.js": "/static/js/2.d0a92d37.chunk.js",
+    "static/js/2.d0a92d37.chunk.js.map": "/static/js/2.d0a92d37.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.fdd244a4a6d5db3e10a5ab5f28525d5b.js": "/precache-manifest.fdd244a4a6d5db3e10a5ab5f28525d5b.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.b1de2a99.chunk.css.map": "/static/css/main.b1de2a99.chunk.css.map",
+    "static/media/antique-barbershop-blur.jpg": "/static/media/antique-barbershop-blur.2eabc811.jpg",
+    "static/media/avatar.png": "/static/media/avatar.315cf354.png",
+    "static/media/avatar.jpg": "/static/media/avatar.f1d71f77.jpg",
+    "static/media/back-view-blonde-curly-hair.jpg": "/static/media/back-view-blonde-curly-hair.8822be3d.jpg",
+    "static/media/badge.png": "/static/media/badge.c29c3545.png",
+    "static/media/christian.jpg": "/static/media/christian.56633ed3.jpg",
+    "static/media/hairdresser.jpg": "/static/media/hairdresser.6eba0f2a.jpg",
+    "static/media/hands-blow-drying-hair.jpg": "/static/media/hands-blow-drying-hair.9f2a921a.jpg",
+    "static/media/kendall.jpg": "/static/media/kendall.e0508cc9.jpg",
+    "static/media/landingPageBG2.png": "/static/media/landingPageBG2.e27b9c79.png"
+  }
+}

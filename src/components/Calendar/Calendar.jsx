@@ -34,6 +34,7 @@ const CalendarComponent = ({ events, onChange }) => {
     Swal.fire(event.title);
   };
 
+  // remapping date to standard format
   const mapToRBCFormat = e =>
     Object.assign({}, e, {
       title: e.title,
