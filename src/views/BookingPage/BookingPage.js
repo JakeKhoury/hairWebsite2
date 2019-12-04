@@ -1,25 +1,9 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-
-// @material-ui imports
-// import AppBar from "@material-ui/core/AppBar";
-// import RaisedButton from "@material-ui/core/RaisedButton";
-// import FlatButton from "@material-ui/core/FlatButton";
-// import moment from "moment";
-// import DatePicker from "@material-ui/core/DatePicker";
-// import Dialog from "@material-ui/core/Dialog";
-// import SelectField from "@material-ui/core/SelectField";
-// import MenuItem from "@material-ui/core/MenuItem";
-// import TextField from "@material-ui/core/TextField";
-// import SnackBar from "@material-ui/core/Snackbar";
-// import Card from "@material-ui/core/Card";
-// import { Step, Stepper, StepLabel, StepContent } from "@material-ui/core/Stepper";
-// import { RadioButton, RadioButtonGroup } from "@material-ui/core/RadioButton";
-// import axios from "axios";
-
+import { useSelector } from "react-redux";
 // core components
 import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
@@ -30,16 +14,10 @@ import HeaderLinks from "components/Header/HeaderLinks.js";
 import Parallax from "components/Parallax/Parallax.js";
 
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
-
-// Sections for this page
-import ProductSection from "./Sections/ProductSection.js";
-import TeamSection from "./Sections/TeamSection.js";
-import WorkSection from "./Sections/WorkSection.js";
-import ScheduleSection from "./Sections/ScheduleSection.js";
-
 import logo from "assets/img/badge.png";
+import Calendar from "components/Calendar/Calendar";
 
-const API_BASE = "http://localhost:8080/";
+const API_BASE = "http://localhost:8080";
 
 const dashboardRoutes = [];
 
@@ -49,18 +27,54 @@ const paraStyle = {
   display: "inline"
 };
 
-const titleStyle = {
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
-  alignContent: "center",
-  containter: "true"
-};
-
-export default function LandingPage(props) {
+const BookingPage = props => {
   const classes = useStyles();
   const { ...rest } = props;
+  const [events, setEvents] = useState([]);
+  const token = useSelector(state => state.user.token);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      const url = `${API_BASE}/booking`;
+      const result = await fetch(url, {
+        method: "GET",
+        headers: {
+          Authorization: token,
+          "Content-Type": "application/json"
+        }
+      });
+      const { appointments } = await result.json();
+      const newEvents = appointments.map(
+        ({ title, end, start, number, name }) => ({
+          title,
+          end,
+          start,
+          number,
+          name
+        })
+      );
+      setEvents(newEvents);
+    };
+    fetchEvents();
+  }, []);
+
+  const postEvent = async event => {
+    console.log("EVENT => ", event);
+    const url = `${API_BASE}/booking/create`;
+    try {
+      const result = await fetch(url, {
+        method: "POST",
+        body: JSON.stringify({ ...event }),
+        headers: {
+          Authorization: token,
+          "Content-Type": "application/json"
+        }
+      });
+      setEvents([...events, event]);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
     <div>
@@ -96,8 +110,10 @@ export default function LandingPage(props) {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <GridContainer justify="center">
-            <GridItem xs={12} sm={12} md={6}>
-              <div style={{ height: 300 }}></div>
+            <GridItem xs={12} sm={12} md={12}>
+              <div style={{ margin: 16 }}>
+                <Calendar events={events} onChange={e => postEvent(e)} />
+              </div>
             </GridItem>
           </GridContainer>
         </div>
@@ -105,4 +121,6 @@ export default function LandingPage(props) {
       <Footer />
     </div>
   );
-}
+};
+
+export default BookingPage;
