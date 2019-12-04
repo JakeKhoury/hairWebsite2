@@ -77,9 +77,8 @@ export default function ProfilePage(props) {
             <div className={classes.description}>
               <h4>
                 A skilled beauty service professional specializing in the
-                fashioning and treatment of hair. Dalton has loads of experience
-                providing cuts, colorings, and stylings to his many clients over
-                the years.{" "}
+                fashioning and treatment of hair. Dalton has years of experience
+                providing cuts, colorings, and stylings to his many clients.{" "}
               </h4>
             </div>
             <GridContainer justify="center">
@@ -113,12 +112,14 @@ export default function ProfilePage(props) {
                               position: "relative"
                             }}
                           >
+                            <h4><b>Salon Boutique</b></h4>
                             <h4>
-                              <b>301 W Heritage Dr Tyler, TX 75703 Suite #201</b>
+                              <b>301 W Heritage Dr, Tyler TX, Suite #201</b>
                             </h4>
                             <MapContainer />
                           </div>
                           <div>
+                            <br></br>
                             <br></br>
                             <br></br>
                           </div>

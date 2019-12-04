@@ -51,6 +51,7 @@ const CalendarComponent = ({ events, onChange }) => {
         max={new Date(0, 0, 0, 18, 0, 0)}
         selectable
         dayLayoutAlgorithm="no-overlap"
+        views={['week', 'day']}
         defaultView={Views.WEEK}
         defaultDate={moment().toDate()}
         localizer={localizer}
