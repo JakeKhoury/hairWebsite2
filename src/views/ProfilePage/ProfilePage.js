@@ -76,9 +76,10 @@ export default function ProfilePage(props) {
             </GridContainer>
             <div className={classes.description}>
               <h4>
-                This is where the description of the servicer will go. Here you
-                can provide details, background information, and other content
-                specific to the servicer.{" "}
+                A skilled beauty service professional specializing in the
+                fashioning and treatment of hair. Dalton has loads of experience
+                providing cuts, colorings, and stylings to his many clients over
+                the years.{" "}
               </h4>
             </div>
             <GridContainer justify="center">
@@ -104,9 +105,24 @@ export default function ProfilePage(props) {
                       tabName: "Location",
                       tabIcon: LocationCity,
                       tabContent: (
-                          <div style={{width: '100%', height: 500, position: 'relative'}}>
-                            <MapContainer/>
+                        <div>
+                          <div
+                            style={{
+                              width: "100%",
+                              height: 500,
+                              position: "relative"
+                            }}
+                          >
+                            <h4>
+                              <b>301 W Heritage Dr Tyler, TX 75703 Suite #201</b>
+                            </h4>
+                            <MapContainer />
                           </div>
+                          <div>
+                            <br></br>
+                            <br></br>
+                          </div>
+                        </div>
                       )
                     }
                   ]}

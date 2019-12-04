@@ -31,38 +31,42 @@ export default function ProductSection() {
       <GridContainer justify="center">
         <GridItem xs={12} sm={12} md={8}>
           <Card className={classes.card}>
-            <CardHeader color="info" style={{fontSize: "1.65rem"}}>Men's Express Haircut - $45</CardHeader>
+            <CardHeader color="info" style={{fontSize: "1.4rem"}}>Men's Express Haircut - $45</CardHeader>
             <CardBody>
               <Quote
-                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
-                //author="Someone famous in Source Title"
+                text="A classic haircut with just the style you want."
               />
             </CardBody>
           </Card>
           <Card className={classes.card}>
-            <CardHeader color="info" style={{fontSize: "1.65rem"}}>Men's Deluxe Haircut - $55</CardHeader>
+            <CardHeader color="info" style={{fontSize: "1.4rem"}}>Men's Deluxe Haircut - $55</CardHeader>
             <CardBody>
               <Quote
-                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
-                //author="Someone famous in Source Title"
+                text="Haircut, shampoo/conditioner & hot towel finish."
               />
             </CardBody>
           </Card>
           <Card className={classes.card}>
-            <CardHeader color="info" style={{fontSize: "1.65rem"}}>Women's Express Haircut - $75</CardHeader>
+            <CardHeader color="primary" style={{fontSize: "1.4rem"}}>Women's Express Haircut - $55</CardHeader>
             <CardBody>
               <Quote
-                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
-                //author="Someone famous in Source Title"
+                text="A classic haircut with just the style you want."
               />
             </CardBody>
           </Card>
           <Card className={classes.card}>
-            <CardHeader color="info" style={{fontSize: "1.65rem"}}>Women's Hair Coloring - $95</CardHeader>
+            <CardHeader color="primary" style={{fontSize: "1.4rem"}}>Women's Deluxe Haircut - $75</CardHeader>
             <CardBody>
               <Quote
-                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
-                //author="Someone famous in Source Title"
+                text="Haircut, shampoo/conditioner & hot towel finish."
+              />
+            </CardBody>
+          </Card>
+          <Card className={classes.card}>
+            <CardHeader color="primary" style={{fontSize: "1.4rem"}}>Women's Hair Coloring - $95</CardHeader>
+            <CardBody>
+              <Quote
+                text="A hair coloring session to transform your look."
               />
             </CardBody>
           </Card>

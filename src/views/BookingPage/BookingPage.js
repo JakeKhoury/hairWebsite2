@@ -17,7 +17,7 @@ import styles from "assets/jss/material-kit-react/views/landingPage.js";
 import logo from "assets/img/badge.png";
 import Calendar from "components/Calendar/Calendar";
 
-const API_BASE = "http://localhost:8080";
+const API_BASE = "https://hairwebsite-api-4gsqpx5cqq-uc.a.run.app";
 
 const dashboardRoutes = [];
 
