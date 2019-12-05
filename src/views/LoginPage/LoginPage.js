@@ -5,7 +5,6 @@ import InputAdornment from "@material-ui/core/InputAdornment";
 import Icon from "@material-ui/core/Icon";
 // @material-ui/icons
 import Email from "@material-ui/icons/Email";
-import People from "@material-ui/icons/People";
 // core components
 import Header from "components/Header/Header.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
@@ -22,7 +21,6 @@ import { useDispatch, useSelector } from "react-redux";
 import styles from "assets/jss/material-kit-react/views/loginPage.js";
 import { USER_SIGN_IN } from "actions/actionTypes";
 import { useHistory } from 'react-router-dom';
-//import image from "assets/img/bg7.jpg";
 import image from "assets/img/hands-blow-drying-hair.jpg";
 import Swal from "sweetalert2";
 import logo from "assets/img/badge.png";
