@@ -1,5 +1,4 @@
 import React from "react";
-import { Map, Marker, GoogleApiWrapper } from "google-maps-react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // @material-ui/core components
@@ -10,11 +9,9 @@ import Devices from "@material-ui/icons/Devices";
 // core components
 import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
-import Button from "components/CustomButtons/Button.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
-import NavPills from "components/NavPills/NavPills.js";
 import Parallax from "components/Parallax/Parallax.js";
 import MapContainer from "components/MapContainer/MapContainer.js";
 import CustomTabs from "components/CustomTabs/CustomTabs.js";

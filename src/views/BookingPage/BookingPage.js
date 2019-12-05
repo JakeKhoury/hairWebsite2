@@ -9,10 +9,8 @@ import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-import Button from "components/CustomButtons/Button.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import Parallax from "components/Parallax/Parallax.js";
-
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
 import logo from "assets/img/badge.png";
 import Calendar from "components/Calendar/Calendar";
@@ -97,7 +95,7 @@ const BookingPage = props => {
         image={require("assets/img/back-view-blonde-curly-hair.jpg")}
       >
         <div className={classes.container}>
-          <GridContainer name="titleText" /*style={titleStyle}*/>
+          <GridContainer name="titleText">
             <GridItem xs={12} sm={12} md={6}>
               <h1 className={classes.title}>Book your appointment online.</h1>
               <br></br>

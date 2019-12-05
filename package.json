@@ -1,7 +1,7 @@
 {
   "name": "hairbydalton",
-  "version": "1.8.0",
-  "description": "website for a hair stylist",
+  "version": "1.0.0",
+  "description": "website for hairstylists",
   "private": true,
   "main": "dist/index.js",
   "dependencies": {

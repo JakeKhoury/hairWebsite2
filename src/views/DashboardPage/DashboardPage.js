@@ -4,22 +4,16 @@ import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
-import { LocationCity, Devices } from "@material-ui/icons/";
 import { Typography } from "@material-ui/core";
 // core components
 import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
-import Button from "components/CustomButtons/Button.js";
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
-import NavPills from "components/NavPills/NavPills.js";
 import Parallax from "components/Parallax/Parallax.js";
-import MapContainer from "components/MapContainer/MapContainer.js";
-import CustomTabs from "components/CustomTabs/CustomTabs.js";
 import { useSelector } from "react-redux";
 import ServiceList from "./ServiceList";
-import profile from "assets/img/faces/avatar.png";
 
 import styles from "assets/jss/material-kit-react/views/profilePage.js";
 

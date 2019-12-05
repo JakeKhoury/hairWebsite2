@@ -1,24 +1,13 @@
 import React from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-
-import { spacing } from '@material-ui/system';
-
-// @material-ui/icons
-import Chat from "@material-ui/icons/Chat";
-import VerifiedUser from "@material-ui/icons/VerifiedUser";
-import Fingerprint from "@material-ui/icons/Fingerprint";
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
-import InfoArea from "components/InfoArea/InfoArea.js";
 import Card from "components/Card/Card.js";
 import CardBody from "components/Card/CardBody.js";
 import CardHeader from "components/Card/CardHeader.js";
 import Quote from "components/Typography/Quote.js";
-
-import { cardTitle } from "assets/jss/material-kit-react.js";
-import imagesStyles from "assets/jss/material-kit-react/imagesStyles.js";
 
 import styles from "assets/jss/material-kit-react/views/servicesPage.js";
 
