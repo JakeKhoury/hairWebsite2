@@ -40,8 +40,8 @@ export default function LoginPage(props) {
 
   const login = async () => {
     try {
-      // const url = "https://hairwebsite-api-4gsqpx5cqq-uc.a.run.app/user/login";
-      const url = "http://localhost:8080/user/login";
+      const url = "https://hairwebsite-api-4gsqpx5cqq-uc.a.run.app/user/login";
+      // const url = "http://localhost:8080/user/login";
       const result = await fetch(url, {
         method: "POST",
         body: JSON.stringify({ email, password }),

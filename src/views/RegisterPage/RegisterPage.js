@@ -53,8 +53,8 @@ const LoginPage = (props)  =>{
     }
 
     try {
-    // const url = "https://hairwebsite-api-4gsqpx5cqq-uc.a.run.app/user/register";
-    const url = "http://localhost:8080/user/register";
+    const url = "https://hairwebsite-api-4gsqpx5cqq-uc.a.run.app/user/register";
+    // const url = "http://localhost:8080/user/register";
     await fetch(url, 
       {
         method: "POST",

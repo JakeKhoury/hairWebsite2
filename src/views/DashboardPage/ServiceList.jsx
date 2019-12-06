@@ -14,8 +14,8 @@ import moment from "moment";
 import FolderIcon from "@material-ui/icons/Event";
 import DeleteIcon from "@material-ui/icons/Delete";
 
-// const API_BASE = "https://hairwebsite-api-4gsqpx5cqq-uc.a.run.app";
-const API_BASE = "http://localhost:8080";
+const API_BASE = "https://hairwebsite-api-4gsqpx5cqq-uc.a.run.app";
+// const API_BASE = "http://localhost:8080";
 
 const ServiceList = ({ setHasEvents }) => {
   const [events, setEvents] = useState([]);
