@@ -27,12 +27,6 @@ export default function DashboardPage(props) {
   const classes = useStyles();
   const name = useSelector(state => state.user.name);
   const { ...rest } = props;
-  const imageClasses = classNames(
-    classes.imgRaised,
-    classes.imgRoundedCircle,
-    classes.imgFluid
-  );
-  const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
 
   const [hasEvents, setHasEvents] = useState(false);
 

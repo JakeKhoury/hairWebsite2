@@ -59,7 +59,6 @@ const BookingPage = props => {
 
   // event for creating appointments
   const postEvent = async event => {
-    console.log("EVENT => ", event);
     const url = `${API_BASE}/booking/create`;
     try {
       const result = await fetch(url, {
