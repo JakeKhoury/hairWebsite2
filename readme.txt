@@ -6,7 +6,8 @@ that contains the back end and api code. This website should be live and accessi
 
 In order to run this project locally, NPM (NodeJS Package Manager) version 6.9.0 must be installed and
 NodeJS version 10.16.3 must also be installed. This can be done by visiting this link 'https://nodejs.org/en/'
-and installing the appropriate version of NodeJS (which will include NPM with it).
+and installing the appropriate version of NodeJS (which will include NPM with it). Nodemon is also required to
+run the api.
 
 >cd into the hairwebsite-backend folder in a terminal window 
 >run 'npm install' in the directory
@@ -16,10 +17,12 @@ and installing the appropriate version of NodeJS (which will include NPM with it
 >run 'npm start' to start the front end
 
 This should open a localhost version of the website in the browser that has an api to communicate with.
-This is more easily done on a Mac or Linux machine, but can be done on Windows too. Alternatively, navigate
-to 'https://hairbydalton.com' to use the website. In order to test the administrator view, log in with
-'admin@hairbydalton.com' for the email and 'hbdadmin' as the password. This will allow the stylist to view
-all upcoming events on the scheduling calendar.
+This is more easily done on a Mac or Linux machine, but can be done on Windows too.
+
+Alternatively, navigate to 'https://hairbydalton.com' to use the website. In order
+to test the administrator view, log in with 'admin@hairbydalton.com' for the email
+and 'hbdadmin' as the password. This will allow the stylist to view all upcoming events
+on the scheduling calendar.
 
 Known Issues:
 - Inconsistent input validation for registration page
