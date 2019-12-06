@@ -40,7 +40,8 @@ export default function LoginPage(props) {
 
   const login = async () => {
     try {
-      const url = "https://hairwebsite-api-4gsqpx5cqq-uc.a.run.app/user/login";
+      // const url = "https://hairwebsite-api-4gsqpx5cqq-uc.a.run.app/user/login";
+      const url = "http://localhost:8080/user/login";
       const result = await fetch(url, {
         method: "POST",
         body: JSON.stringify({ email, password }),
@@ -51,7 +52,7 @@ export default function LoginPage(props) {
       const { token, user } = await result.json();
       dispatch({
         type: USER_SIGN_IN,
-        payload: { token, email: user.email, name: user.name }
+        payload: { token, email: user.email, name: user.name, isAdmin: user.isAdmin }
       });
       push("/dashboard");   
     } catch (e) {

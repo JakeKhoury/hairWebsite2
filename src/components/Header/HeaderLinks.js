@@ -40,6 +40,7 @@ const useStyles = makeStyles(styles);
 const HeaderLinks = props => {
   const classes = useStyles(props);
   const name = useSelector(state => state.user.name);
+  const token = useSelector(state => state.user.token);
   const dispatch = useDispatch();
 
   const pushTo = (route = "/") => () => {
@@ -100,7 +101,6 @@ const HeaderLinks = props => {
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
-          // href="localhost:3000/about"
           color="transparent"
           onClick={pushTo("/about")}
           className={
@@ -110,17 +110,6 @@ const HeaderLinks = props => {
           <Face className={classes.icons} /> About
         </Button>
       </ListItem>
-      {/* <ListItem className={classes.listItem}>
-        <Button
-          color="transparent"
-          onClick={pushTo("/register")}
-          className={
-            matchesRoute("/register") ? classes.navLinkHover : classes.navLink
-          }
-        >
-          <AccountCircle className={classes.icons} /> {name ? name : "Account"}
-        </Button>
-      </ListItem> */}
       <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding

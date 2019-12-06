@@ -41,6 +41,7 @@ const LoginPage = (props)  =>{
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [isEmpty, setIsEmpty] = useState(true);
 
   const signup = async () => {
     if (!passwordsMatch()) {
@@ -51,8 +52,9 @@ const LoginPage = (props)  =>{
       });
     }
 
-    try { 
-    const url = "https://hairwebsite-api-4gsqpx5cqq-uc.a.run.app/user/register";
+    try {
+    // const url = "https://hairwebsite-api-4gsqpx5cqq-uc.a.run.app/user/register";
+    const url = "http://localhost:8080/user/register";
     await fetch(url, 
       {
         method: "POST",
@@ -193,7 +195,7 @@ const LoginPage = (props)  =>{
                   </CardBody>
                   <a href="/login" style={{display: 'flex', justifyContent: 'center'}}>Already have an account? Login here</a>
                   <CardFooter className={classes.cardFooter}>
-                    <Button simple color="primary" size="lg" onClick={signup}>
+                    <Button simple color="primary" size="lg" onClick={signup} /*disabled={isEmpty}*/>
                       Sign Up
                     </Button>
                   </CardFooter>

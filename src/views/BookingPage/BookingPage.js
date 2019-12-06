@@ -15,7 +15,8 @@ import styles from "assets/jss/material-kit-react/views/landingPage.js";
 import logo from "assets/img/badge.png";
 import Calendar from "components/Calendar/Calendar";
 
-const API_BASE = "https://hairwebsite-api-4gsqpx5cqq-uc.a.run.app";
+// const API_BASE = "https://hairwebsite-api-4gsqpx5cqq-uc.a.run.app";
+const API_BASE = "http://localhost:8080";
 
 const dashboardRoutes = [];
 
@@ -33,7 +34,7 @@ const BookingPage = props => {
 
   useEffect(() => {
     const fetchEvents = async () => {
-      const url = `${API_BASE}/booking`;
+      const url = `${API_BASE}/booking/fetchAll`;
       const result = await fetch(url, {
         method: "GET",
         headers: {
@@ -100,7 +101,7 @@ const BookingPage = props => {
               <h1 className={classes.title}>Book your appointment online.</h1>
               <br></br>
               <h4 style={paraStyle}>
-                See what{"'"}s available and request your appointent now.
+                See what{"'"}s available and request your appointment now.
               </h4>
             </GridItem>
           </GridContainer>
