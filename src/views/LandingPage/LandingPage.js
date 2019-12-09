@@ -65,7 +65,7 @@ export default function LandingPage(props) {
                 with professional styling.
               </h4>
             </GridItem>
-            <GridItem xs={12} sm={12} md={6}>
+            {/* <GridItem xs={12} sm={12} md={6}>
               <div style={{ position: "absolute", right: "50px", marginTop: "-60px"}}>
                 <h4>
                   Book your appointment today
@@ -80,7 +80,7 @@ export default function LandingPage(props) {
                   Schedule Now
                 </Button>
               </div>
-            </GridItem>
+            </GridItem> */}
           </GridContainer>
         </div>
       </Parallax>
