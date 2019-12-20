@@ -88,7 +88,7 @@ const HeaderLinks = props => {
           <FormatListBulleted className={classes.icons} /> Services
         </Button>
       </ListItem>
-      <ListItem className={classes.listItem}>
+      {/* <ListItem className={classes.listItem}>
         <Button
           color="transparent"
           onClick={pushTo("/booking")}
@@ -98,7 +98,7 @@ const HeaderLinks = props => {
         >
           <Event className={classes.icons} /> Book Now
         </Button>
-      </ListItem>
+      </ListItem> */}
       <ListItem className={classes.listItem}>
         <Button
           color="transparent"
@@ -110,7 +110,7 @@ const HeaderLinks = props => {
           <Face className={classes.icons} /> About
         </Button>
       </ListItem>
-      <ListItem className={classes.listItem}>
+      {/* <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
           buttonText={name ? name : "Account"}
@@ -139,7 +139,7 @@ const HeaderLinks = props => {
                 ]
           }
         />
-      </ListItem>
+      </ListItem> */}
     </List>
   );
 };

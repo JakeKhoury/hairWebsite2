@@ -91,8 +91,9 @@ export default function ProfilePage(props) {
                           <h3>
                             <b>Cell Phone: </b>(903) 266-0405
                           </h3>
+                          <h5 style={{ paddingBottom: '5px' }}>(call or text)</h5>
                           <h3>
-                            <b>Email: </b>daltonmartin@gmail.com
+                            <b>Email: </b>daltonmartinhair@gmail.com
                           </h3>
                         </div>
                       )
@@ -111,7 +112,7 @@ export default function ProfilePage(props) {
                           >
                             <h4><b>Salon Boutique</b></h4>
                             <h4>
-                              <b>301 W Heritage Dr, Tyler TX, Suite #201</b>
+                              <b>301 W Heritage Dr, Tyler TX, Suite #3</b>
                             </h4>
                             <MapContainer />
                           </div>

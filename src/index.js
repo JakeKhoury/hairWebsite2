@@ -25,11 +25,11 @@ ReactDOM.render(
       <Router history={hist}>
         <Switch>
           <Route path="/services" component={ServicesPage} />
-          <Route path="/booking" component={BookingPage} />
+          {/* <Route path="/booking" component={BookingPage} /> */}
           <Route path="/about" component={ProfilePage} />
-          <Route path="/register" component={RegisterPage} />
-          <Route path="/login" component={LoginPage} />
-          <Route path="/dashboard" component={DashboardPage} />
+          {/* <Route path="/register" component={RegisterPage} /> */}
+          {/* <Route path="/login" component={LoginPage} /> */}
+          {/* <Route path="/dashboard" component={DashboardPage} /> */}
           <Route path="/" component={LandingPage} />
         </Switch>
       </Router>
